@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: "cleanArchitecture"
+  devtools:
+    add-properties: false
+  h2:
+    console:
+      enabled: true
+      path: "/h2"
+  profiles:
+    include: null
+  datasource:
+    url: ${URL_DATABASE:jdbc:h2:mem:test}
+    username: ${USERNAME_DATABASE:sa}
+    password: ${PASSWORD_DATABASE:pass}
+    driverClassName: ${DRIVER_DATABASE:org.h2.Driver}
+  jpa:
+    databasePlatform: ${DATABASE_PLATFORM:org.hibernate.dialect.H2Dialect}
+aws:
+  region: ${REGION_AWS:us-east-1}
+  secretName: ${SECRET_DB:db-info}
